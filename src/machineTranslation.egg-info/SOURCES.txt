@@ -1,0 +1,15 @@
+README.md
+setup.py
+src/machineTranslation/__init__.py
+src/machineTranslation/logger.py
+src/machineTranslation/utils.py
+src/machineTranslation.egg-info/PKG-INFO
+src/machineTranslation.egg-info/SOURCES.txt
+src/machineTranslation.egg-info/dependency_links.txt
+src/machineTranslation.egg-info/top_level.txt
+src/machineTranslation/components/__init__.py
+src/machineTranslation/components/common.py
+src/machineTranslation/components/decoder.py
+src/machineTranslation/components/encoder.py
+src/machineTranslation/components/transformer.py
+src/machineTranslation/pipeline/__init__.py
