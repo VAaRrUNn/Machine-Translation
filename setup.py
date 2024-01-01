@@ -18,6 +18,6 @@ setuptools.setup(
     long_description_content="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
     # project_urls =
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src")
+    package_dir={"": "machineTranslation"},
+    packages=setuptools.find_packages(where="machineTranslation")
 )
