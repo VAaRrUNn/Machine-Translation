@@ -1,1 +1,5 @@
--e .
+torch
+transformers
+accelerate
+datasets
+evaluate
