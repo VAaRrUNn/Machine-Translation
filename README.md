@@ -1,4 +1,4 @@
-# Quick demo available at: [HF spaces]([https://github.com/pragyy/datascience](https://huggingface.co/spaces/fubuki119/Machine-Translation_eng-hin))
+# Quick demo available at: [HF spaces](https://huggingface.co/spaces/fubuki119/Machine-Translation_eng-hin)
 
 # Machine Translation (English to Hindi)
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/VaruN-dev-dev/Machine-Translation?include_prereleases)
