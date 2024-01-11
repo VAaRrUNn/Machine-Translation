@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F 
+import torch.nn.functional as F
 
 
 class PositionalEncoding(nn.Module):
@@ -50,6 +50,7 @@ class MultiHeadAttention(nn.Module):
         d_k = q.size()[-1]
         att = (q @ k.transpose(-2, -1)) / torch.sqrt(torch.tensor(d_k))
         if mask is not None:
+            mask = mask.unsqueeze(1).expand_as(att)
             att += mask
         att = F.softmax(att, dim=-1)
         new_emb = att @ v
@@ -101,7 +102,7 @@ class MultiHeadCrossAttention(nn.Module):
     def __init__(self,
                  d_model: int,
                  n_head: int):
-        
+
         super().__init__()
         self.q_layer = nn.Linear(d_model, d_model)
         self.k_layer = nn.Linear(d_model, d_model)
@@ -111,7 +112,7 @@ class MultiHeadCrossAttention(nn.Module):
     def forward(self,
                 enc_out: torch.tensor,
                 dec_out: torch.tensor):
-        
+
         B, max_sen_len, d_model = enc_out.size()
 
         q = self.q_layer(dec_out)
@@ -133,5 +134,5 @@ class MultiHeadCrossAttention(nn.Module):
         new_emb = new_emb.reshape(B, max_sen_len, self.n_head * (d_model // self.n_head))
 
         return att, new_emb
-    
+
 

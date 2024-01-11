@@ -30,13 +30,13 @@ class DecoderLayer(nn.Module):
                 x: torch.tensor,
                 mask: torch.tensor,
                 enc_out: torch.tensor):
-        
+
         _, att = self.masked_att(x, mask)
         att = self.l_norm1(att + x)
 
         _, out = self.mcross_att(enc_out, att)
         out = self.l_norm2(out + att)
-        
+
         f_out = self.ffn(out)
         out = self.l_norm2(f_out + out)
 
